@@ -9,11 +9,12 @@ function getComputerChoice() {
 
 // Create variables to store computer and user choices
 const computerSelection = getComputerChoice();
-const userSelection = prompt("Rock, paper or scissors?");
+const playerSelection = prompt("Rock, paper or scissors?");
+
+
 
 console.log(getComputerChoice());
 
-// ask user to choose rock, paper or scissors and store choice in userSelection
 // while condition is true
 //     if computerSelection equals rock AND userSelection equals scissors
 //         show message "You lose! Rock beats Scissors"
