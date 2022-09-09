@@ -1,19 +1,19 @@
 // Create an array with values rock, paper, scissors
 const options = ["rock","paper","scissors"];
 
-// Create function to pick random item from array
+// Picks random item from array
 function getComputerChoice() {
   let randomItem = options[Math.floor(Math.random() * options.length)];
   return randomItem;
 }
 
-// Create function to ask user to pick one of the options
+// Asks user to pick one of the options
 function getPlayerChoice() {
   let playerSelection = prompt("Choose your weapon: rock, paper or scissors?");
   return playerSelection;
 }
 
-// Create function to play a round of the game
+// Plays a round of the game
 function playRound(computerSelection, playerSelection) {
 
   while(true) {
@@ -50,7 +50,7 @@ function playRound(computerSelection, playerSelection) {
 
     if (computerSelection === playerSelection) {
       alert("It's a tie! Try again")
-      return "tie";
+      break;
     }
     // else {
     //   alert("Invalid answer. Please try again.");
@@ -60,6 +60,7 @@ function playRound(computerSelection, playerSelection) {
   }
 }
 
+// Keeps count of number of game rounds and wins of each player
 function game() {
   let computer = 0;
   let player = 0;
@@ -68,9 +69,9 @@ function game() {
     const playerSelection = getPlayerChoice();
     let winner = playRound(computerSelection, playerSelection);
 
-    if (winner == "player") {
+    if (winner === "player") {
       player++;
-    } else if (winner == "computer") {
+    } else if (winner === "computer") {
       computer++;
     } else {
       i--;
@@ -81,6 +82,7 @@ function game() {
 
 }
 
+// Tells the winner after 5 rounds
 function winner(computer, player) {
   if (player > computer) {
     alert("You win!");
@@ -90,5 +92,3 @@ function winner(computer, player) {
 }
 
 game();
-
-// console.log(playRound(computerSelection, playerSelection));
