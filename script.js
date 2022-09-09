@@ -77,32 +77,18 @@ function game() {
     }
   }
 
+  winner(computer, player);
+
+}
+
+function winner(computer, player) {
   if (player > computer) {
     alert("You win!");
   } else {
-    alert("You lose");
+    alert("You lose :(");
   }
 }
 
-// function winner(winner) {
-//   let computer = 0;
-//   let player = 0;
-//   if (winner === "player") {
-//     player++;
-//   } else {
-//     computer++;
-//   }
-
-//   if (player > computer) {
-//     alert("You win!");
-//   } else {
-//     alert("You lose :(");
-//   }
-// }
-
-// Create variables to store computer and user choices
-// const computerSelection = getComputerChoice();
-// const playerSelection = getPlayerChoice().toLowerCase();
 game();
 
 // console.log(playRound(computerSelection, playerSelection));
