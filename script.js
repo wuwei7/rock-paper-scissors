@@ -7,6 +7,10 @@ function getComputerChoice() {
   return randomItem;
 }
 
+// Create variables to store computer and user choices
+const computerSelection = getComputerChoice();
+const userSelection = prompt("Rock, paper or scissors?");
+
 console.log(getComputerChoice());
 
 // ask user to choose rock, paper or scissors and store choice in userSelection
