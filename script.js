@@ -15,8 +15,6 @@ function getPlayerChoice() {
 
 // Plays a round of the game
 function playRound(computerSelection, playerSelection) {
-
-  while(true) {
     
     if (computerSelection === "rock" && playerSelection === "scissors") {
       alert("You lose! Rock beats Scissors");
@@ -55,7 +53,6 @@ function playRound(computerSelection, playerSelection) {
 
     alert("Invalid answer. Please try again.");
     return;
-  }
 }
 
 // Keeps count of number of game rounds and wins of each player
