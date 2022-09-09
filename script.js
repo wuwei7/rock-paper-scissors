@@ -50,13 +50,11 @@ function playRound(computerSelection, playerSelection) {
 
     if (computerSelection === playerSelection) {
       alert("It's a tie! Try again")
-      break;
+      return;
     }
-    // else {
-    //   alert("Invalid answer. Please try again.");
-    //   getPlayerChoice();
-    //   keepGoing = true;
-    // }
+
+    alert("Invalid answer. Please try again.");
+    return;
   }
 }
 
