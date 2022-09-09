@@ -7,28 +7,61 @@ function getComputerChoice() {
   return randomItem;
 }
 
+// Create function to ask user to pick one of the options
+function getPlayerChoice() {
+  let playerSelection = prompt("Choose your weapon: rock, paper or scissors?");
+  return playerSelection;
+}
+
+// Create function to play a round of the game
+keepGoing = true;
+function playRound(computerSelection, playerSelection) {
+  
+  while (keepGoing) {
+
+    if (computerSelection === "rock" && playerSelection === "scissors") {
+      alert("You lose! Rock beats Scissors");
+      keepGoing = false;
+    }
+
+    if (computerSelection === "scissors" && playerSelection === "paper") {
+      alert("You lose! Scissors beats Paper");
+      keepGoing = false;
+    }
+
+    if (computerSelection === "paper" && playerSelection === "rock") {
+      alert("You lose! Paper beats Rock");
+      keepGoing = false;
+    }
+
+    if (computerSelection === "scissors" && playerSelection === "rock") {
+      alert("You win! Rock beats Scissors");
+      keepGoing = false;
+    }
+
+    if (computerSelection === "paper" && playerSelection === "scissors") {
+      alert("You win! Scissors beats Paper");
+      keepGoing = false;
+    }
+
+    if (computerSelection === "rock" && playerSelection === "paper") {
+      alert("You win! Paper beats Rock");
+      keepGoing = false;
+    } 
+    // else {
+    //   alert("Invalid answer. Please try again.");
+    //   getPlayerChoice();
+    //   keepGoing = true;
+    // }
+
+  }
+
+}
+
 // Create variables to store computer and user choices
 const computerSelection = getComputerChoice();
-const playerSelection = prompt("Rock, paper or scissors?");
+const playerSelection = getPlayerChoice().toLowerCase();
 
+playRound(computerSelection, playerSelection);
 
-
-console.log(getComputerChoice());
-
-// while condition is true
-//     if computerSelection equals rock AND userSelection equals scissors
-//         show message "You lose! Rock beats Scissors"
-//     if computerSelection equals scissors AND userSelection equals paper
-//         show message "You lose! Scissors beats Paper"
-//     if computerSelection equals paper AND userSelection equals rock
-//         show message "You lose! Paper beats Rock"
-//     if computerSelection equals scissors AND userSelection equals rock
-//       show message "You win! Rock beats Scissors"
-//     if computerSelection equals paper AND userSelection equals scissors
-//       show message "You win! Scissors beats Paper"
-//     if computerSelection equals rock AND userSelection equals paper
-//       show message "You win! Paper beats Rock"
-//       else {
-//         ask user to choose again
-//       }
-    
+// console.log(playRound(computerSelection, /playerSelection/i));
