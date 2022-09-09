@@ -60,8 +60,8 @@ function game() {
   let computer = 0;
   let player = 0;
   for (let i = 0; i < 5; i++) {
-    const computerSelection = getComputerChoice().toLowerCase();
-    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    const playerSelection = getPlayerChoice().toLowerCase();
     let winner = playRound(computerSelection, playerSelection);
 
     if (winner === "player") {
