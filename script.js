@@ -14,76 +14,95 @@ function getPlayerChoice() {
 }
 
 // Create function to play a round of the game
-keepGoing = true;
 function playRound(computerSelection, playerSelection) {
-  
-  while (keepGoing) {
 
+  while(true) {
+    
     if (computerSelection === "rock" && playerSelection === "scissors") {
-      return "computer";
       alert("You lose! Rock beats Scissors");
-      keepGoing = false;
+      return "computer";
     }
 
     if (computerSelection === "scissors" && playerSelection === "paper") {
-      return "computer";
       alert("You lose! Scissors beats Paper");
-      keepGoing = false;
+      return "computer";
     }
 
     if (computerSelection === "paper" && playerSelection === "rock") {
-      return "computer";
       alert("You lose! Paper beats Rock");
-      keepGoing = false;
+      return "computer";
     }
 
     if (computerSelection === "scissors" && playerSelection === "rock") {
-      return "player";
       alert("You win! Rock beats Scissors");
-      keepGoing = false;
+      return "player";
     }
 
     if (computerSelection === "paper" && playerSelection === "scissors") {
-      return "player";
       alert("You win! Scissors beats Paper");
-      keepGoing = false;
+      return "player";
     }
 
     if (computerSelection === "rock" && playerSelection === "paper") {
-      return "player";
       alert("You win! Paper beats Rock");
-      keepGoing = false;
-    } 
+      return "player";
+    }
+
+    if (computerSelection === playerSelection) {
+      alert("It's a tie! Try again")
+      return "tie";
+    }
     // else {
     //   alert("Invalid answer. Please try again.");
     //   getPlayerChoice();
     //   keepGoing = true;
     // }
-
   }
-
 }
 
 function game() {
+  let computer = 0;
+  let player = 0;
   for (let i = 0; i < 5; i++) {
-    let winner = playRound();
-    winner(winner);
+    const computerSelection = getComputerChoice().toLowerCase();
+    const playerSelection = getPlayerChoice();
+    let winner = playRound(computerSelection, playerSelection);
 
-    // let computer = 0;
-    // let player = 0;
-    // if (winner === "player") {
-    //   player++;
-    // } else {
-    //   computer++;
-    // }
+    if (winner == "player") {
+      player++;
+    } else if (winner == "computer") {
+      computer++;
+    } else {
+      i--;
+    }
   }
-  
+
+  if (player > computer) {
+    alert("You win!");
+  } else {
+    alert("You lose");
+  }
 }
 
+// function winner(winner) {
+//   let computer = 0;
+//   let player = 0;
+//   if (winner === "player") {
+//     player++;
+//   } else {
+//     computer++;
+//   }
+
+//   if (player > computer) {
+//     alert("You win!");
+//   } else {
+//     alert("You lose :(");
+//   }
+// }
+
 // Create variables to store computer and user choices
-const computerSelection = getComputerChoice();
-const playerSelection = getPlayerChoice().toLowerCase();
+// const computerSelection = getComputerChoice();
+// const playerSelection = getPlayerChoice().toLowerCase();
+game();
 
-playRound(computerSelection, playerSelection);
-
-// console.log(playRound(computerSelection, /playerSelection/i));
+// console.log(playRound(computerSelection, playerSelection));
